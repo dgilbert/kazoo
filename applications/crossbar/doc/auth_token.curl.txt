@@ -1,0 +1,6 @@
+# Credentials Hash: d2abaa37a7c3db1137d385e1d8c15fd2
+# Account Name: Master
+
+# Create an auth token on the master account
+curl -v -X PUT -H "content-type:application/json" http://localhost:8000/v1/user_auth -d '{"data":{"credentials":"d2abaa37a7c3db1137d385e1d8c15fd2", "account_name":"Master"}}' | pp
+

@@ -1,0 +1,14 @@
+{
+    "_id": "_design/contests"
+    ,"language": "javascript"
+    ,"views": {
+        "accounts_listing":{
+            "map":"function(doc) { if (doc.pvt_type != 'contest' || doc.pvt_deleted) return; emit(doc.pvt_account_id, null); }"
+            ,"reduce":"_count"
+        }
+        ,"listing_by_begin_time": {
+            "map": "function(doc) { if (doc.pvt_type != 'contest' || doc.pvt_deleted) return; emit(doc.prior_time || doc.start_time, null); }"
+        }
+    }
+}
+
